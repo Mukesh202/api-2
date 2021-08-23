@@ -1,0 +1,24 @@
+<p>new2 works!</p>
+<table>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Open</th>
+            <th>High</th>
+            <th>Low</th>
+            <th>Close</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let a of indicatedata">
+        <td>{{a.Date}}</td>
+        <td>{{a.Open}}</td>
+        <td>{{a.High}}</td>
+        <td>{{a.Low}}</td>
+        <td>{{a.Close}}</td>
+        <td> <button class="btn btn-primary"(click)="Edit(a)"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i> </button> 
+            <button class="btn btn-secondary" (click)="Delete(a)"> <i class="fa fa-trash" aria-hidden="true"></i> </button>   </td>
+        </tr>
+    </tbody>
+</table>

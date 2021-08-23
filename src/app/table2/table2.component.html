@@ -1,0 +1,26 @@
+<h2>Table with API </h2>
+<script src="https://kit.fontawesome.com/3be0f63036.js" crossorigin="anonymous"></script>
+<div class="container">
+
+	<table class="style">
+		<tr>
+			<th>S.No.</th>
+			<th>productname</th>
+			<th>price</th>
+			<th>Action</th>
+		</tr>
+		<tr *ngFor="let item of row; let i = index">
+			<td><input type="text">{{item.serialnumber}}</td>
+			<td><input type="text">{{item.productname}}</td>
+			<td><input type="text">{{item.price}}</td>
+			<td>
+<button class="btn btn-primary" (click)="addTable()"> 
+	<img src="../assets/icon/icons8-add-24.png"alt=""></button>
+<button class="btn btn-warning" (click)="deleteRow(i)">
+	 <img src="../assets/icon/icons8-trash-24.png"alt=""> </button>
+<button class="btn btn-danger" (click)="editRow()">
+	 <img src=".//assets/icon/icons8-edit-24.png"alt=""> </button>
+			</td>
+		</tr>
+	</table>
+</div>

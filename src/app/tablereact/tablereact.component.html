@@ -1,0 +1,116 @@
+<p>tablereact works!</p>
+<div class="container">
+<div class="card">
+       <div class="col-md-12" style="text-align: right;" >
+        <button  type="button" class="btn btn-lg btn-primary" (click)="addItem()">
+            <img src="../assets/icon/icons8-add-24.png" alt="">Add</button>&nbsp;
+            
+    </div>
+    <div class="col-md-12 mt-4 mb-4">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>S.no.</th>
+                    <th>productname</th>
+                    <th>price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of listData;index">
+                    <td><span>{{item.serialnumber}}</span></td>
+                    <td><span>{{item.productname}}</span></td>
+                    <td><span>{{item.price}}</span></td>
+                    <td>
+                   <button type="button" class="btn btn-danger" (click)="edit()">
+                   <img src="../assets/icon/icons8-edit-24.png" alt=""data-toggle="modal" data-target="#exampleModal" > Edit</button>
+                   <button type="button" class="btn btn-warning" (click)="deletItem(item)">
+                   <img src="../assets/icon/icons8-trash-24.png" alt=""data-toggle="modal" data-target="#delet Modal"> Delet </button> </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">pop over with edit form</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="mngodal-body">
+          <form [formGroup]="tablereact">
+            <div class="mt-5 ">
+                <div class="form-row">
+                    <div class="col-md-12">
+                        <div class="form-group mt-4">
+                            <label></label>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <input type="text" formControlName="serialnumber" class="form-control"
+                                    placeholder="serialnumber">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group"><label></label></div>
+                        <div class="form-row">
+                            <div class="col">
+                                <input type="text" formControlName="productname" class="form-control"
+                                    placeholder="productname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group"><label></label></div>
+                        <div class="form-row">
+                            <div class="col">
+                                <input type="text" formControlName="price" class="form-control" placeholder="price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group"><label></label></div>
+                        <div class="form-row">
+                            <div class="col">
+                                <input type="text" formControlName="gender" class="form-control" placeholder="gender">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row mt-4">
+                    </div>
+                </div>
+            </div>
+        </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+          <button  type="button" class="btn btn-lg btn-primary" (click)="addItem()">
+            submit</button>&nbsp;
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="deletModal" tabindex="-1" role="dialog" aria-labelledby="deletModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deletModalLabel">pop over with delet</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="mngodal-body">
+          ... 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+          <button type="button" class="btn btn-primary">yes</button>
+        </div>
+      </div>
+    </div>
+  </div>

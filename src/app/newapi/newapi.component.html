@@ -1,0 +1,21 @@
+
+<table>
+    <thead>
+        <tr  >
+            <th> Date </th>
+            <th> Open </th>
+            <th> High </th>
+            <th> Low </th>
+            <th> Close </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let bse of showdata">
+            <td>  {{bse.Date}}  </td>
+            <td>  {{bse.Open}}  </td>
+            <td>  {{bse.High}} </td>
+            <td>  {{bse.Low}}  </td>
+            <td>  {{bse.Close}}  </td>
+        </tr>
+    </tbody>
+</table>
